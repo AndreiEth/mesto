@@ -1,0 +1,20 @@
+.popup__form-line {
+    opacity: 0.2;
+    border: 0.1px solid #000000;
+    margin-bottom: 30px;
+}
+
+.popup__form-line:last-of-type {
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width:320px) {
+
+    .popup__form-line {
+        margin-bottom: 30px;
+    }
+
+    .popup__form-line:last-of-type {
+        margin-bottom: 45px;
+    }
+}

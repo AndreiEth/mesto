@@ -1,0 +1,13 @@
+.popup__info {
+    margin: auto;
+    background: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    padding: 34px 36px 37px 36px;
+}
+@media screen and (max-width:320px) {
+
+    .popup__info {
+        padding: 25px 22px;
+    }
+}

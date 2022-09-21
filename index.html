@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./pages/index.css">
+    <title>Mesto Russia</title>
+</head>
+
+<body class="body">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="./images/logo.svg" alt="Лого">
+            <div class="header__line"></div>
+        </header>
+        <main>
+            <section class="profile">
+                <img class="profile__avatar" src="./images/image.png" alt="Аватар">
+                <div class="profile__info">
+                    <p class="profile__user-name">Жак-Ив Кусто</p>
+                    <button class="profile__edit-button" type="button"></button>
+                    <p class="profile__user-about">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <div class="element">
+                    <img class="element__image" src="./images/mesto1.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Карачаевск</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/mesto2.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Гора Эльбрус</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/mesto3.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Домбай</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/mesto2.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Гора Эльбрус</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/mesto1.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Домбай</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+                <div class="element">
+                    <img class="element__image" src="./images/mesto3.png" alt="Красивый пейзаж">
+                    <div class="element__info">
+                        <p class="element__text">Карачаево-Черкессия</p>
+                        <button class="element__heart"></button>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__text">© 2020 Mesto Russia</p>
+        </footer>
+        <section class="popup">
+            <form class="popup__container" type="submit">
+                <div class="popup__info">
+                    <button class="popup__close-button" type="button"></button>
+                    <p class="popup__title">Редактировать профиль</p>
+                    <fieldset class="popup__form">
+                        <input class="popup__form-info_name" type="text" placeholder="Имя" value="Жак-Ив Кусто">
+                        <div class="popup__form-line"></div>
+                        <input class="popup__form-info_job" type="text" placeholder="О себе"
+                            value="Исследователь океана">
+                        <div class="popup__form-line"></div>
+                        <button class="popup__save-button" type="button">Сохранить</button>
+                    </fieldset>
+                </div>
+            </form>
+        </section>
+
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

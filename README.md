@@ -1,17 +1,14 @@
-# Проект: Место
+# Project: Mesto Russia (Travelling through Russia)
 
-### Обзор
+### Overview
 
-* Figma
-* Картинки
+* Layout
+* About project
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
+* [Layout link](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
 
-**Картинки**
+**About project**
 
-Доставать картинки предстоит из Фигмы. Это расхожая практика, поэтому полезно потренироваться.
-Не забудьте [оптимизировать картинки](https://tinypng.com/), чтобы ваш сайт загружался быстрее.
-
-Удачи!
+I have implemnted a pop-up window in this project, with some inputs, close and save buttons.
