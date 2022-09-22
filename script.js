@@ -5,8 +5,8 @@ const clickSaveButton = popUp.querySelector(".popup__save-button");
 const userName = document.querySelector(".profile__user-name")
 const userAbout = document.querySelector(".profile__user-about")
 let formElement = popUp.querySelector(".popup__form");
-let nameInput = formElement.querySelector(".popup__form-info_name");
-let jobInput = formElement.querySelector(".popup__form-info_job");
+let nameInput = formElement.querySelector(".popup__form-name");
+let jobInput = formElement.querySelector(".popup__form-job");
 
 
 

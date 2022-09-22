@@ -1,4 +1,4 @@
-.popup__form-info_job{
+.popup__form-job {
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -8,6 +8,6 @@
     margin-bottom: 13px;
 }
 
-.popup__form-info_job:focus {
+.popup__form-job:focus {
     outline: none;
 }
