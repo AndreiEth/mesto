@@ -1,19 +1,19 @@
 .profile {
     margin: 0 auto;
     margin-bottom: 50px;
-    width: 880px;
-    display: flex;
-    flex-direction: row;
+    max-width: 880px;
+    display: grid;
+    grid-template-columns: min-content minmax(580px,580px) min-content;
+    gap: 0px 0px;
+    grid-auto-flow: row;
     align-items: center;
 }
 
-@media screen and (max-width:320px) {
+    @media screen and (max-width:320px) {
 
-    .profile {
-        margin: 0 auto;
-        margin-bottom: 36px;
-        max-width: 282px;
-        display: flex;
-        flex-direction: column;
+        .profile {
+            max-width: 282px;
+            display: flex;
+            flex-direction: column;
+        }
     }
-}

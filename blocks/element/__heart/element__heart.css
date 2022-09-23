@@ -4,7 +4,7 @@
     padding: 0;
     background-image: url(../../../images/like-buttons.svg);
     background-repeat: no-repeat;
-    background-color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0);
     background-position: bottom;
     background-size: contain;
     cursor: pointer;

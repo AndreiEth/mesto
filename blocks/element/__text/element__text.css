@@ -10,7 +10,3 @@
     line-height: 29px;
     color: #000000;
 }
-
-.element__text:last-of-type {
-    max-width: 190px;
-}
