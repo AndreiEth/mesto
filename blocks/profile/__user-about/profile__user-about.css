@@ -14,14 +14,12 @@
 @media screen and (max-width:320px) {
 
     .profile__user-about {
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
+        text-align: center;
         margin-right: 0;
-        margin-left: 28px;
+        margin-left: 30px;
         margin-top: 0;
         font-size: 14px;
         line-height: 17px;
-        max-width: 180px;
+        width: 180px;
     }
 }
