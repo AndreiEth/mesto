@@ -1,4 +1,4 @@
-.popup__text_name {
+.popup__form-text_name {
     padding: 0 0 11px 0;
     font-style: normal;
     font-weight: 400;
@@ -11,6 +11,6 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.popup__text_name:focus {
+.popup__form-text_name:focus {
     outline: none;
 }
