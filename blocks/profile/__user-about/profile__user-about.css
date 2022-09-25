@@ -15,11 +15,11 @@
 
     .profile__user-about {
         text-align: center;
-        margin-right: 0;
-        margin-left: 30px;
-        margin-top: 0;
+        margin-left: 48px;
+        padding: 0;
         font-size: 14px;
         line-height: 17px;
-        width: 180px;
+        max-width: 180px;
+        width: 100%;
     }
 }

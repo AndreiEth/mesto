@@ -1,23 +1,16 @@
-.popup__job {
+.popup__text_name {
     padding: 0 0 11px 0;
-    text-align: start;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
     color: #000000;
-    margin-bottom: 48px;
-    max-width: 358px;
     border: none;
+    max-width: 358px;
+    margin-bottom: 30px;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.popup__job:focus {
+.popup__text_name:focus {
     outline: none;
-}
-
-@media screen and (max-width:320px){
-  .popup__job{
-    margin-bottom: 45px;
-  }
 }
