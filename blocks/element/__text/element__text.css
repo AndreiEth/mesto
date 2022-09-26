@@ -15,13 +15,4 @@
         max-width: 180px;
     }
 }
-@media screen and (max-width:768px){
-    .element__text{
-        max-width: 200px;
-    }
-}
-@media screen and (max-width:594px){
-    .element__text{
-        max-width: 200px;
-    }
-}
+

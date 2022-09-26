@@ -6,18 +6,9 @@
     grid-template-columns: 294px 42px;
     grid-template-rows: 57px 22px;
 }
-@media screen and (max-width:594px) {
-    .profile__info{
-        justify-items: center;
-        margin-right: 0;
-        margin-bottom: 36px;
-        max-width: 282px;
-        grid-template-columns: 234px 48px;
-        grid-template-rows: 40px 16px;
-    }
-}
-@media screen and (max-width:320px) {
 
+
+@media screen and (max-width:594px) {
     .profile__info {
         justify-items: center;
         margin-right: 0;
