@@ -8,6 +8,14 @@
     margin-bottom: 50px;
 }
 
+@media screen and (max-width:594px) {
+    .popup__title {
+        font-size: 18px;
+        line-height: 22px;
+        margin-bottom: 75px;
+    }
+}
+
 @media screen and (max-width:320px) {
 
     .popup__title {
