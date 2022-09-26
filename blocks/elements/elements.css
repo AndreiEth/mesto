@@ -7,6 +7,29 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width:880px) {
+    .elements {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .elements {
+        margin: 0 auto;
+        max-width: 594px;
+        grid-template-columns: repeat(2, min-content);
+        grid-template-rows: repeat(4, min-content);
+        gap: 20px 30px;
+    }
+}
+@media screen and (max-width:594px){
+    .elements {
+        max-width: 282px;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, min-content);
+        gap: 20px 0px;
+    }
+}
 @media screen and (max-width:320px) {
 
     .elements {

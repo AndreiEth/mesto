@@ -10,6 +10,16 @@
     line-height: 22px;
     color: #FFFFFF;
 }
+@media screen and (max-width:594px) {
+    .profile__user-about{
+        text-align: center;
+        padding: 0;
+        width: 100%;
+        margin-left: 48px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
 
 @media screen and (max-width:320px) {
 

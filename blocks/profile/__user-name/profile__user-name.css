@@ -12,6 +12,18 @@
     color: #FFFFFF;
 }
 
+@media screen and (max-width:594px) {
+    .profile__user-name {
+        text-align: center;
+        margin-bottom: 10px;
+        padding: 0;
+        margin-left: 46px;
+        width: 100%;
+        font-size: 27px;
+        line-height: 33px;
+    }
+}
+
 @media screen and (max-width:320px) {
 
     .profile__user-name {

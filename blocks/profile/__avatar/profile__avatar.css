@@ -7,6 +7,23 @@
     object-position: center;
 }
 
+@media screen and (max-width:638px) {
+    .profile__avatar {
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width:594px) {
+    .profile__avatar {
+        width: 150px;
+        height: 150px;
+        margin-right: 0;
+        margin-bottom: 26px;
+    }
+}
+
 @media screen and (max-width:320px) {
 
     .profile__avatar {

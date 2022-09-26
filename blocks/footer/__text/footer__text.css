@@ -8,6 +8,19 @@
     color: #545454;
 }
 
+@media screen and (max-width:880px) {
+    .footer__text {
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .footer__text {
+        max-width: 768px;
+        margin-left: 34px;
+    }
+}
+
 @media screen and (max-width:320px) {
 
     .footer__text {
