@@ -11,6 +11,7 @@
     border: none;
     transition: opacity 1s linear 0s;
 }
-.element__heart:hover{
+
+.element__heart:hover {
     opacity: 0.5;
 }

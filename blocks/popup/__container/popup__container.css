@@ -8,14 +8,7 @@
     max-width: 430px;
 }
 
-@media screen and (max-width:594px) {
-    .popup__container {
-        padding: 25px 22px;
-    }
-}
-
-@media screen and (max-width:320px) {
-
+@media screen and (max-width:620px) {
     .popup__container {
         padding: 25px 22px;
     }

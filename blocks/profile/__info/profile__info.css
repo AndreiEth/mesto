@@ -8,7 +8,7 @@
 }
 
 
-@media screen and (max-width:594px) {
+@media screen and (max-width:620px) {
     .profile__info {
         justify-items: center;
         margin-right: 0;

@@ -10,9 +10,9 @@
     line-height: 29px;
     color: #000000;
 }
-@media screen and (max-width:880px){
-    .element__text{
+
+@media screen and (max-width:900px) {
+    .element__text {
         max-width: 180px;
     }
 }
-

@@ -11,10 +11,9 @@
     color: #FFFFFF;
 }
 
-@media screen and (max-width:594px) {
+@media screen and (max-width:620px) {
     .profile__user-about {
         text-align: center;
-        padding: 0;
         max-width: 180px;
         width: 100%;
         margin-left: 48px;
