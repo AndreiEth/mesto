@@ -132,14 +132,14 @@ const createItemNode = (name,link) => {
 
 const openImage = document.getElementById('imagepopup');
 const closePic = document.getElementById('closeimagebutton');
-const imagePopUp = document.querySelector('.image__zoom');
-const imageInfo = document.querySelector('.image__name');
+const imagePopUp = document.querySelector('.popup-image__zoom');
+const imageInfo = document.querySelector('.popup-image__name');
 
 function openImagePopUp () {
-    openImage.classList.add("popup__image_active");
+    openImage.classList.add("popup-image_active");
 }
 function closeImagePopUp () {
-    openImage.classList.remove("popup__image_active");
+    openImage.classList.remove("popup-image_active");
 }
 
 closePic.addEventListener("click", closeImagePopUp);
