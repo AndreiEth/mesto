@@ -1,0 +1,6 @@
+.image__zoom{
+    max-width: 75vw;
+    max-height: 75vh;
+    border-radius: 0px;
+    box-sizing: border-box;
+}
