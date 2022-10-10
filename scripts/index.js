@@ -5,8 +5,8 @@ const buttonClosePopupProfile = popUp.querySelector(".popup__close-button");
 const userName = document.querySelector(".profile__user-name");
 const userAbout = document.querySelector(".profile__user-about");
 const formElement = document.getElementById("popup-form");
-let nameInput = formElement.querySelector(".popup__popup-form_text_name");
-let jobInput = formElement.querySelector(".popup__popup-form_text_job");
+const nameInput = formElement.querySelector(".popup__popup-form_text_name");
+const jobInput = formElement.querySelector(".popup__popup-form_text_job");
 
 //add button
 const addPopUp = document.getElementById("addpopup");
@@ -15,8 +15,8 @@ const buttonClosePopupCard = document.getElementById("closeaddbutton");
 const elementText = document.querySelector(".element__text");
 const elementImage = document.querySelector(".element__image");
 const submitAddForm = document.getElementById("addpopup-form");
-let placeInput = document.querySelector(".popup__popup-form_text_place");
-let imageInput = document.querySelector(".popup__popup-form_text_image");
+const placeInput = document.querySelector(".popup__popup-form_text_place");
+const imageInput = document.querySelector(".popup__popup-form_text_image");
 
 const initialCards = [
     {
