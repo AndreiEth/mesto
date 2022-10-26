@@ -7,7 +7,7 @@
   color: #000000;
   border: none;
   max-width: 358px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
@@ -16,11 +16,11 @@
 }
 
 .popup__popup-form:last-of-type {
-  margin-bottom: 48px;
+  margin-bottom: 0px;
 }
 
 @media screen and (max-width:620px) {
   .popup__popup-form:last-of-type {
-    margin-bottom: 45px;
+    margin-bottom: 0px;
   }
 }

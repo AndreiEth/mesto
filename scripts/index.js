@@ -5,8 +5,11 @@ const buttonClosePopupProfile = popUp.querySelector(".popup__close-button");
 const userName = document.querySelector(".profile__user-name");
 const userAbout = document.querySelector(".profile__user-about");
 const formElement = document.getElementById("popup-form");
-const nameInput = formElement.querySelector(".popup__popup-form_text_name");
-const jobInput = formElement.querySelector(".popup__popup-form_text_job");
+const nameInput = formElement.querySelector("#form-name");
+const jobInput = formElement.querySelector("#form-job");
+
+
+
 
 //add button
 const addPopUp = document.getElementById("addpopup");
@@ -15,8 +18,10 @@ const buttonClosePopupCard = document.getElementById("closeaddbutton");
 const elementText = document.querySelector(".element__text");
 const elementImage = document.querySelector(".element__image");
 const submitAddForm = document.getElementById("addpopup-form");
-const placeInput = document.querySelector(".popup__popup-form_text_place");
-const imageInput = document.querySelector(".popup__popup-form_text_image");
+const placeInput = submitAddForm.querySelector("#form-place");
+const imageInput = submitAddForm.querySelector("#form-image");
+const saveButton = Array.from(document.querySelectorAll('.popup__save-button'));
+
 
 const initialCards = [
     {
@@ -55,7 +60,6 @@ const template = document.querySelector(".template");
 
 
 
-
 // open nad close pop up functions
 function openPopUp(popUp) {
     popUp.classList.add("popup_opened");
@@ -64,7 +68,27 @@ function openPopUp(popUp) {
 function closePopUp(popUp) {
     popUp.classList.remove("popup_opened");
 }
+
+document.addEventListener('keydown', function(evt){
+    if(evt.key == "Escape"){
+        closePopUp(popUp);
+        closePopUp(addPopUp);
+        closePopUp(imageArea);
+    }
+});
+const closePopupOverlay = (window) => {
+    window.addEventListener('click', function (evt) {
+        if(evt.target == evt.currentTarget){
+           closePopUp(window);
+        }
+      });
+}
+
+
+
+
 //delete card function
+
 const handleDeleteCard = (evt) => {
     const currentEl = evt.target.closest(".element");
     currentEl.remove();
@@ -76,6 +100,8 @@ const handleDeleteCard = (evt) => {
 buttonCloseImagePopup.addEventListener("click", function () {
     closePopUp(imageArea);
 });
+
+document.addEventListener('click', closePopupOverlay(imageArea));
 
 //edit button 
 buttonOpenPopupProfile.addEventListener("click", function () {
@@ -92,6 +118,8 @@ formElement.addEventListener('submit', function (evt) {
 buttonClosePopupProfile.addEventListener("click", function () {
     closePopUp(popUp);
 });
+document.addEventListener('click', closePopupOverlay(popUp));
+
 
 //add button 
 
@@ -110,6 +138,7 @@ const handleAddForm = (evt) => {
 buttonClosePopupCard.addEventListener("click", function () {
     closePopUp(addPopUp)
 });
+document.addEventListener('click', closePopupOverlay(addPopUp));
 
 
 // add cards
@@ -148,4 +177,7 @@ const createItemNode = (name, link) => {
 }
 
 render();
+
+
+
 
