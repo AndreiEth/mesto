@@ -1,6 +1,7 @@
 .popup__save-button_invalid {
     margin-top: 18.34px;
     font-style: normal;
+    cursor: no-drop;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
