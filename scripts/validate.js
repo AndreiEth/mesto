@@ -64,7 +64,6 @@ const setSubmitButtonState = (saveButton, isActive, settings) => {
     } else {
       saveButton.setAttribute("disabled", true);
       saveButton.classList.add(settings.inactiveButtonClass);
-
     }
 }
 

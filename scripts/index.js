@@ -21,6 +21,7 @@ const cardForm = document.getElementById("addpopup-form");
 const placeInput = cardForm.querySelector("#form-place");
 const imageInput = cardForm.querySelector("#form-image");
 const saveButton = Array.from(document.querySelectorAll('.popup__save-button'));
+const inactiveButton = cardForm.querySelector("#savebuttoncard");
 
 
 const initialCards = [
