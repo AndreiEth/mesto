@@ -57,6 +57,7 @@ enableValidation(settings);
 
 
 // валидация кнопки
+
 const setSubmitButtonState = (saveButton, isActive, settings) => {
     if (isActive) {
       saveButton.removeAttribute("disabled");

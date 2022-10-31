@@ -21,8 +21,7 @@ const cardForm = document.getElementById("addpopup-form");
 const placeInput = cardForm.querySelector("#form-place");
 const imageInput = cardForm.querySelector("#form-image");
 const saveButton = Array.from(document.querySelectorAll('.popup__save-button'));
-const inactiveButton = cardForm.querySelector("#savebuttoncard");
-
+const saveCardButton = cardForm.querySelector("#save-card-button");
 
 const initialCards = [
     {
@@ -138,6 +137,11 @@ butttonOpenPopupCard.addEventListener("click", function () {
     openPopUp(cardPopUp);
 });
 
+const submitCardForm = () =>{
+    saveCardButton.classList.add("popup__save-button_invalid");
+    saveCardButton.setAttribute("disabled", true);
+}
+
 const handleAddForm = (evt) => {
     evt.preventDefault();
     const initialCard = createItemNode(placeInput.value, imageInput.value);
@@ -145,9 +149,10 @@ const handleAddForm = (evt) => {
     closePopUp(cardPopUp);
     placeInput.value = '';
     imageInput.value = '';
+    submitCardForm();
 }
 buttonClosePopupCard.addEventListener("click", function () {
-    closePopUp(cardPopUp)
+    closePopUp(cardPopUp);
 });
 
 
