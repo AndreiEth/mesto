@@ -23,32 +23,7 @@ const imageInput = cardForm.querySelector("#form-image");
 const saveButton = Array.from(document.querySelectorAll('.popup__save-button'));
 const saveCardButton = cardForm.querySelector("#save-card-button");
 
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-];
+
 
 const imageArea = document.getElementById('imagepopup');
 const buttonCloseImagePopup = document.getElementById('closeimagebutton');
@@ -90,29 +65,6 @@ function closeByEscape(evt) {
       closePopUp(openedPopup);
     }
   } 
-
-  
-  
-  
-
-
-
-
-//delete card function
-
-const handleDeleteCard = (evt) => {
-    const currentEl = evt.target.closest(".element");
-    currentEl.remove();
-}
-
-
-// zoom picture
-
-buttonCloseImagePopup.addEventListener("click", function () {
-    closePopUp(imageArea);
-});
-
-
 
 //edit button 
 buttonOpenPopupProfile.addEventListener("click", function () {
@@ -157,42 +109,7 @@ buttonClosePopupCard.addEventListener("click", function () {
 
 
 
-// add cards
 
-const render = () => {
-    initialCards.forEach((initialCard) => {
-        const currentCard = createItemNode(initialCard.name, initialCard.link);
-        container.append(currentCard);
-    });
-    cardForm.addEventListener("submit", handleAddForm);
-};
-const createItemNode = (name, link) => {
-    const currentCard = template.content.cloneNode(true);
-    const currentName = currentCard.querySelector(".element__text");
-    const currentLink = currentCard.querySelector(".element__image");
-    currentName.textContent = name;
-    currentLink.src = link;
-    currentLink.alt = name;
-
-    const deleteButton = currentCard.querySelector('.element__bin');
-    deleteButton.addEventListener('click', handleDeleteCard);
-
-    currentCard.querySelector('.element__heart').addEventListener('click', function (evt) {
-        evt.target.classList.toggle('element__heart_active');
-    });
-
-    currentLink.addEventListener('click', function () {
-        imageInfo.textContent = name;
-        imagePopUp.src = link;
-        imagePopUp.alt = name;
-        openPopUp(imageArea);
-    });
-
-
-    return currentCard;
-}
-
-render();
 
 
 
