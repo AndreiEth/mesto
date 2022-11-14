@@ -1,3 +1,42 @@
+import { Card } from './Card.js';
+import { FormValidator } from './FormValidator.js';
+
+const initialCards = [
+    {
+        name: 'Архыз',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    },
+    {
+        name: 'Челябинская область',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    },
+    {
+        name: 'Иваново',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    },
+    {
+        name: 'Камчатка',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    },
+    {
+        name: 'Холмогорский район',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    },
+    {
+        name: 'Байкал',
+        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    }
+];
+
+const cardSettings = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__popup-form',
+    submitButtonSelector: '.popup__save-button',
+    inactiveButtonClass: 'popup__save-button_invalid',
+    inputErrorClass: 'popup__popup-form_type_error',
+    errorClass: 'popup__error'
+  }
+
 //edit button 
 const profilePopUp = document.querySelector(".popup");
 const buttonOpenPopupProfile = document.querySelector(".profile__edit-button");
@@ -25,24 +64,24 @@ const saveCardButton = cardForm.querySelector("#save-card-button");
 
 
 
-const imageArea = document.getElementById('imagepopup');
+export const imageArea = document.getElementById('imagepopup');
 const buttonCloseImagePopup = document.getElementById('closeimagebutton');
-const imagePopUp = document.querySelector('.popup__image-zoom');
+export const imagePopUp = document.querySelector('.popup__image-zoom');
 const imageInfo = document.querySelector('.popup__image-name');
 
 const container = document.querySelector(".elements");
-const template = document.querySelector(".template");
+const template = document.querySelector(".cardTemplate");
 
 
 
-// open nad close pop up functions
-function openPopUp(popUp) {
+// open and close pop up functions
+export function openPopUp(popUp) {
     popUp.classList.add("popup_opened");
     document.addEventListener('keydown', closeByEscape);  
     document.addEventListener('click', closePopupOverlay(popUp));
 }
 
-function closePopUp(popUp) {
+export function closePopUp(popUp) {
     popUp.classList.remove("popup_opened");
     document.removeEventListener('keydown', closeByEscape); 
     
@@ -57,6 +96,10 @@ const closePopupOverlay = (popUp) => {
       });
 }
 
+buttonCloseImagePopup.addEventListener("click", function () {
+    closePopUp(imageArea);
+});
+
 
 function closeByEscape(evt) {
 
@@ -66,7 +109,7 @@ function closeByEscape(evt) {
     }
   } 
 
-//edit button 
+//edit profile button 
 buttonOpenPopupProfile.addEventListener("click", function () {
     nameInput.value = userName.textContent;
     jobInput.value = userAbout.textContent;
@@ -83,31 +126,45 @@ buttonClosePopupProfile.addEventListener("click", function () {
 });
 
 
-//add button 
+//add card  button 
 
 butttonOpenPopupCard.addEventListener("click", function () {
     openPopUp(cardPopUp);
 });
 
-const submitCardForm = () =>{
-    saveCardButton.classList.add("popup__save-button_invalid");
-    saveCardButton.setAttribute("disabled", true);
-}
-
-const handleAddForm = (evt) => {
+cardForm.addEventListener('submit', (evt) => {
     evt.preventDefault();
-    const initialCard = createItemNode(placeInput.value, imageInput.value);
-    container.prepend(initialCard);
+    createCard({name: placeInput.value, link: imageInput.value}, true);
     closePopUp(cardPopUp);
     placeInput.value = '';
     imageInput.value = '';
-    submitCardForm();
-}
+    
+});
 buttonClosePopupCard.addEventListener("click", function () {
     closePopUp(cardPopUp);
 });
 
 
+// create new card by class Card
+
+const createCard = (cardData, isPrepend) => {
+    const card = new Card(cardData, ".cardTemplate");
+    if(isPrepend) {
+        container.prepend(card.getCurrentCard());
+    } else {
+        container.append(card.getCurrentCard());
+    }
+}
+
+initialCards.forEach((cardData) => {
+    createCard(cardData);
+});
+
+// input validation 
+[profileForm, cardForm].forEach((form) => {
+const formValidator = new FormValidator(cardSettings, form);
+formValidator.enableValidation();
+});
 
 
 
