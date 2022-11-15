@@ -1,4 +1,4 @@
-import { openPopUp, imageArea, imagePopUp } from './index.js';
+import { openPopUp, imageArea, imagePopUp, imageInfo } from './utils.js';
 
 export class Card {
     constructor(data, selector) {
@@ -24,6 +24,7 @@ export class Card {
     
     _setData(){
         this._image.src = this._data.link;
+        this._image.alt = this._data.name;
         this._text.textContent = this._data.name;
     }
 
@@ -37,11 +38,13 @@ export class Card {
     _onClick() {
         imagePopUp.src = this._data.link;
         imagePopUp.alt = this._data.name;
+        imageInfo.textContent = this._data.name;
         openPopUp(imageArea);
     }
 
     _onBinClick() {
       this._currentCard.remove();
+      return null;
     }
 
     _onHeartClick() {

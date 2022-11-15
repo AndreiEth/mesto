@@ -2,19 +2,18 @@ export class FormValidator {
   constructor(settings, form) {
     this._settings = settings;
     this._form = form;
-  }
 
-  enableValidation() {
-    this._formElements();
-    this._setEventListeners();
-  }
-  _formElements() {
+    this._inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector));
     this._saveButton = this._form.querySelector(this._settings.submitButtonSelector);
   }
 
+  enableValidation() {
+    this._setEventListeners();
+  }
+  
+
   _setEventListeners() {
-    const inputList = Array.from(this._form.querySelectorAll(this._settings.inputSelector));
-    inputList.forEach((inputElement) => {
+    this._inputList.forEach((inputElement) => {
     inputElement.addEventListener('input', () => this._onInput(inputElement));
   });
 

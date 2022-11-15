@@ -37,7 +37,7 @@
             <div class="popup__container">
                 <button class="popup__close-button" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form" action="#" name="popupform" id="popup-form">
+                <form class="popup__form" action="#" name="profileForm" id="popup-form">
                     <input required minlength="2" maxlength="40" class="popup__popup-form popup__popup-form_text_name" id="form-name" name="popup-form-name" type="text"
                         placeholder="Имя" value="Жак-Ив Кусто">
                         <span class="popup__error" id="form-name-error"></span>
@@ -53,7 +53,7 @@
         <div class="popup__container">
             <button class="popup__close-button" type="button" id="closeaddbutton"></button>
             <h3 class="popup__title">Новое место</h3>
-            <form class="popup__form" action="#" name="popupform" id="addpopup-form">
+            <form class="popup__form" action="#" name="cardForm" id="addpopup-form">
                 <input required minlength="2" maxlength="30" class="popup__popup-form popup__popup-form_text_place" id="form-place" name="popup-form-place" type="text"
                     placeholder="Название" value="">
                     <span class="popup__error" id="form-place-error"></span>
@@ -69,7 +69,7 @@
         <div class="popup__image-container">
             <button class="popup__image-close-button" type="button" id="closeimagebutton"></button>
             <img class="popup__image-zoom" src="./images/mesto1.png" alt="Старая крепость">
-            <h2 class="popup__image-name">Карачаевск</h2>
+            <h2 class="popup__image-name"></h2>
         </div>
     </div>
     <template class="cardTemplate" >
