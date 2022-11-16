@@ -1,7 +1,7 @@
 import { Card } from './card.js';
 import { FormValidator } from './FormValidator.js';
-import { openPopUp, imageArea } from './utils.js';
-import {initialCards} from './CardList.js';
+import { openPopUp, imageArea, closePopupOverlay, closeByEscape, closePopUp   } from './utils.js';
+import {initialCards} from './cardList.js';
 
 const cardSettings = {
     formSelector: '.popup__form',
@@ -52,34 +52,13 @@ const template = document.querySelector(".cardTemplate");
 // open & close pop up functions
 
 
- function closePopUp(popUp) {
-    popUp.classList.remove("popup_opened");
-    document.removeEventListener('keydown', closeByEscape); 
-    
-}
-
-
- export const closePopupOverlay = (popUp) => {
-    popUp.addEventListener('click', function (evt) {
-        if(evt.target == evt.currentTarget){
-           closePopUp(popUp);
-        }
-      });
-}
-
-
 buttonCloseImagePopup.addEventListener("click", function () {
     closePopUp(imageArea);
 });
+closePopupOverlay(imageArea);
 
 
-export function closeByEscape(evt) {
 
-    if (evt.key === 'Escape') {
-      const openedPopup = evt.currentTarget.querySelector('.popup_opened');
-      closePopUp(openedPopup);
-    }
-  } 
 
 //edit profile button 
 buttonOpenPopupProfile.addEventListener("click", function () {
@@ -96,6 +75,7 @@ profileForm.addEventListener('submit', function (evt) {
 buttonClosePopupProfile.addEventListener("click", function () {
     closePopUp(profilePopUp);
 });
+closePopupOverlay(profilePopUp);
 
 
 //add card  button 
@@ -115,6 +95,7 @@ cardForm.addEventListener('submit', (evt) => {
 buttonClosePopupCard.addEventListener("click", function () {
     closePopUp(cardPopUp);
 });
+closePopupOverlay(cardPopUp);
 
 
 // create new card by class Card
