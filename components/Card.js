@@ -1,9 +1,10 @@
-import { openPopUp, imageArea, imagePopUp, imageInfo } from './utils.js';
+import { openPopUp, imageArea, imagePopUp, imageInfo } from '../utils/constants.js';
 
-export class Card {
-    constructor(data, selector) {
+export default class Card {
+    constructor(data, selector, handleCardClick) {
         this._data = data;
         this._selector = selector
+        this._handleCardClick = handleCardClick;
 
         this._cardElements();
         this._setData();
@@ -21,8 +22,8 @@ export class Card {
         this._bin = this._currentCard.querySelector('.element__bin');
         this._heart = this._currentCard.querySelector('.element__heart');
     }
-    
-    _setData(){
+
+    _setData() {
         this._image.src = this._data.link;
         this._image.alt = this._data.name;
         this._text.textContent = this._data.name;
@@ -32,7 +33,15 @@ export class Card {
         this._image.addEventListener('click', () => this._onClick());
         this._bin.addEventListener('click', () => this._onBinClick());
         this._heart.addEventListener('click', () => this._onHeartClick());
+        this._image.addEventListener('click',() => this. _onCardClick());
 
+    }
+
+    _onCardClick() {
+        this._handleCardClick({
+            'name': this._data.name,
+            'link': this._data.link
+        })
     }
 
     _onClick() {
@@ -43,13 +52,11 @@ export class Card {
     }
 
     _onBinClick() {
-      this._currentCard.remove();
-      return null;
+        this._currentCard.remove();
+        return null;
     }
 
     _onHeartClick() {
         this._heart.classList.toggle('element__heart_active');
     }
 }
-
-
