@@ -1,14 +1,15 @@
 export const settings = {
-    formSelector: '.popup__form',
-    inputSelector: '.popup__popup-form',
-    submitButtonSelector: '.popup__save-button',
-    inactiveButtonClass: 'popup__save-button_invalid',
-    inputErrorClass: 'popup__popup-form_type_error',
-    errorClass: 'popup__error',
-    cardTemplateSelector: '.cardTemplate',
-    container: '.elements'
+  formSelector: '.popup__form',
+  inputSelector: '.popup__popup-form',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_invalid',
+  inputErrorClass: 'popup__popup-form_type_error',
+  errorClass: 'popup__error',
+  cardTemplateSelector: '.cardTemplate',
+  container: '.elements',
+  imagePopup: '#imagepopup'
 
-  }
+}
 
 //edit button 
 export const profilePopUp = document.querySelector(".popup");
@@ -17,6 +18,7 @@ export const buttonClosePopupProfile = profilePopUp.querySelector(".popup__close
 export const userName = document.querySelector(".profile__user-name");
 export const userAbout = document.querySelector(".profile__user-about");
 export const profileForm = document.getElementById("popup-form");
+
 export const nameInput = profileForm.querySelector("#form-name");
 export const jobInput = profileForm.querySelector("#form-job");
 

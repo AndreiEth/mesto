@@ -4,10 +4,10 @@ export default class Section {
         this._renderer = renderer;
         this._containerSelector = document.querySelector(containerSelector);
     }
-    addItem(cardData, isPrepend){
+    addItem(item, isPrepend){
         isPrepend 
-        ? this._containerSelector.prepend(cardData)
-        : this._containerSelector.append(cardData)
+        ? this._containerSelector.prepend(item)
+        : this._containerSelector.append(item)
     }
     renderer() {
         this._items.forEach(item => {

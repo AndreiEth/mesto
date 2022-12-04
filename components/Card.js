@@ -1,5 +1,3 @@
-import { openPopUp, imageArea, imagePopUp, imageInfo } from '../utils/constants.js';
-
 export default class Card {
     constructor(data, selector, handleCardClick) {
         this._data = data;
@@ -30,7 +28,6 @@ export default class Card {
     }
 
     _eventListeners() {
-        this._image.addEventListener('click', () => this._onClick());
         this._bin.addEventListener('click', () => this._onBinClick());
         this._heart.addEventListener('click', () => this._onHeartClick());
         this._image.addEventListener('click',() => this. _onCardClick());
@@ -42,13 +39,6 @@ export default class Card {
             'name': this._data.name,
             'link': this._data.link
         })
-    }
-
-    _onClick() {
-        imagePopUp.src = this._data.link;
-        imagePopUp.alt = this._data.name;
-        imageInfo.textContent = this._data.name;
-        openPopUp(imageArea);
     }
 
     _onBinClick() {
