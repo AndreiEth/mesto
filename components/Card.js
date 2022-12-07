@@ -30,7 +30,7 @@ export default class Card {
     _eventListeners() {
         this._bin.addEventListener('click', () => this._onBinClick());
         this._heart.addEventListener('click', () => this._onHeartClick());
-        this._image.addEventListener('click',() => this. _onCardClick());
+        this._image.addEventListener('click', () => this._onCardClick());
 
     }
 

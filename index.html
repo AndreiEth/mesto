@@ -33,31 +33,31 @@
             <p class="footer__text">© 2022 Mesto Russia</p>
         </footer>
 
-        <div class="popup">
+        <div class="popup" id="edit-popup">
             <div class="popup__container">
                 <button class="popup__close-button" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
                 <form class="popup__form" action="#" name="profileForm" id="popup-form">
-                    <input required minlength="2" maxlength="40" class="popup__popup-form popup__popup-form_text_name" id="form-name" name="popup-form-name" type="text"
-                        placeholder="Имя" value="Жак-Ив Кусто">
+                    <input required minlength="2" maxlength="40" class="popup__popup-form popup__popup-form_text_name" id="form-name" name="name" type="text"
+                        placeholder="Имя">
                         <span class="popup__error" id="form-name-error"></span>
-                    <input required minlength="2" maxlength="200" class="popup__popup-form popup__popup-form_text_job" id="form-job" name="popup-form-job" type="text"
-                        placeholder="О себе" value="Исследователь океана">
+                    <input required minlength="2" maxlength="200" class="popup__popup-form popup__popup-form_text_job" id="form-job" name="info" type="text"
+                        placeholder="О себе">
                         <span class="popup__error" id="form-job-error"></span>
                     <button class="popup__save-button" type="submit">Сохранить</button>
                 </form>
             </div>
         </div>
     </div>
-    <div class="popup" id="addpopup">
+    <div class="popup" id="add-popup">
         <div class="popup__container">
             <button class="popup__close-button" type="button" id="closeaddbutton"></button>
             <h3 class="popup__title">Новое место</h3>
             <form class="popup__form" action="#" name="cardForm" id="addpopup-form">
-                <input required minlength="2" maxlength="30" class="popup__popup-form popup__popup-form_text_place" id="form-place" name="popup-form-place" type="text"
+                <input required minlength="2" maxlength="30" class="popup__popup-form popup__popup-form_text_place" id="form-place" name="name" type="text"
                     placeholder="Название" value="">
                     <span class="popup__error" id="form-place-error"></span>
-                <input required class="popup__popup-form popup__popup-form_text_image" id="form-image" name="popup-form-image" type="url" 
+                <input required class="popup__popup-form popup__popup-form_text_image" id="form-image" name="link" type="url" 
                     placeholder="Ссылка на картинку" value="">
                     <span class="popup__error" id="form-image-error"></span>
                 <button class="popup__save-button popup__save-button_invalid" id="save-card-button" type="submit">Создать</button>
@@ -67,7 +67,7 @@
 
     <div class="popup" id="imagepopup">
         <div class="popup__image-container">
-            <button class="popup__image-close-button" type="button" id="closeimagebutton"></button>
+            <button class="popup__close-button" type="button" id="closeimagebutton"></button>
             <img class="popup__image-zoom" src="./images/mesto1.png" alt="Старая крепость">
             <h2 class="popup__image-name"></h2>
         </div>
