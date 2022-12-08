@@ -45,7 +45,7 @@ section.renderer();
 
 const addPopup = new PopupWithForm('#add-popup', (formValue) => {
     const card = createCard(formValue, handleCardClick);
-    section.addItem(card.getCurrentCard());
+    section.addItem(card.getCurrentCard(), true);
     addPopup.close();
 });
 addPopup.setEventListeners();
@@ -60,6 +60,7 @@ editPopup.setEventListeners();
 
  // set Listeners on buttons
 profileAddButton.addEventListener('click', () => {
+    
     addPopup.open()
 });
 profileEditButton.addEventListener('click', () => {

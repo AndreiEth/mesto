@@ -4,7 +4,7 @@ export default class Card {
         this._selector = selector
         this._handleCardClick = handleCardClick;
 
-        this._cardElements();
+        this._getCardElements();
         this._setData();
         this._eventListeners();
     }
@@ -13,7 +13,7 @@ export default class Card {
         return this._currentCard;
     }
 
-    _cardElements() {
+    _getCardElements() {
         this._currentCard = document.querySelector(this._selector).content.querySelector('.element').cloneNode(true);
         this._image = this._currentCard.querySelector('.element__image');
         this._text = this._currentCard.querySelector('.element__text');

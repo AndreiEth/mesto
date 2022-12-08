@@ -28,6 +28,15 @@ export default class FormValidator {
     this._checkInputValidity (inputElement)
     this._checkFormValidity();
   }
+
+  resetValidation() {
+    this._toggleButtonState(); 
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement) 
+    });
+
+  }
   
   _checkFormValidity() {
     if (this._form.checkValidity()) {
