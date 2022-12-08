@@ -16,5 +16,6 @@ export const profileFormInfo = profileForm.info;
 
 export const profileAddButton = document.querySelector(".profile__add-button");
 export const profileEditButton = document.querySelector(".profile__edit-button");
+export const profileAddSubmitButton = document.getElementById("save-card-button");
 
 

@@ -1,6 +1,6 @@
 import './index.css'; 
 import { initialCards } from '../utils/cardList.js';
-import { settings, profileFormName, profileFormInfo, profileAddButton, profileEditButton } from '../utils/constants.js';
+import { settings, profileFormName, profileFormInfo, profileAddButton, profileEditButton, profileAddSubmitButton } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
@@ -60,8 +60,9 @@ editPopup.setEventListeners();
 
  // set Listeners on buttons
 profileAddButton.addEventListener('click', () => {
-    
-    addPopup.open()
+    profileAddSubmitButton.classList.add(settings.inactiveButtonClass);
+    profileAddSubmitButton.setAttribute("disabled", true);
+    addPopup.open();
 });
 profileEditButton.addEventListener('click', () => {
     const currentUserInfo = userInfo.getUserInfo();
@@ -78,12 +79,7 @@ profileFormValidator.enableValidation();
 cardFormValidator.enableValidation();
 
 
-const numbers = [2, 3, 5];
 
-// Стрелочная функция. Не запнётся ли на ней Internet Explorer?
-const doubledNumbers = numbers.map(number => number * 2);
-
-console.log(doubledNumbers); // 4, 6, 10
 
 
 
