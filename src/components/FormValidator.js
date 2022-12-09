@@ -18,22 +18,26 @@ export default class FormValidator {
   });
 
   this._form.addEventListener('submit', () => this._onSubmit());
+  
+
   }
 
   _onSubmit() {
     this._checkFormValidity();
+    this._resetValidation();
   }
 
   _onInput(inputElement) {
-    this._checkInputValidity (inputElement)
+    this._checkInputValidity (inputElement);
     this._checkFormValidity();
   }
 
-  resetValidation() {
-    this._toggleButtonState(); 
+  
+  _resetValidation() {
+    this._setSubmitButtonState(); 
 
     this._inputList.forEach((inputElement) => {
-      this._hideError(inputElement) 
+      this._hideInputError(inputElement);
     });
 
   }

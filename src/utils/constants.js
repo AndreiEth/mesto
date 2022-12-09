@@ -7,7 +7,8 @@ export const settings = {
   errorClass: 'popup__error',
   cardTemplateSelector: '.cardTemplate',
   container: '.elements',
-  imagePopup: '#imagepopup'
+  imagePopup: '#imagepopup',
+  profileAddSubmitButton: '#save-card-button'
 }
 
 export const profileForm = document.getElementById("popup-form");
@@ -16,6 +17,6 @@ export const profileFormInfo = profileForm.info;
 
 export const profileAddButton = document.querySelector(".profile__add-button");
 export const profileEditButton = document.querySelector(".profile__edit-button");
-export const profileAddSubmitButton = document.getElementById("save-card-button");
+
 
 

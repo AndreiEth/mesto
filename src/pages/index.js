@@ -60,8 +60,6 @@ editPopup.setEventListeners();
 
  // set Listeners on buttons
 profileAddButton.addEventListener('click', () => {
-    profileAddSubmitButton.classList.add(settings.inactiveButtonClass);
-    profileAddSubmitButton.setAttribute("disabled", true);
     addPopup.open();
 });
 profileEditButton.addEventListener('click', () => {
