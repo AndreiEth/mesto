@@ -1,12 +1,14 @@
 import './index.css'; 
 import { initialCards } from '../utils/cardList.js';
-import { settings, profileFormName, profileFormInfo, profileAddButton, profileEditButton, profileAddSubmitButton } from '../utils/constants.js';
+import { settings, profileFormName, profileFormInfo, profileAddButton, profileEditButton, cardBinButton } from '../utils/constants.js';
 import Section from '../components/Section.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import Card from '../components/Card.js';
 import FormValidator from '../components/FormValidator.js';
+import PopupWithConfirmation from '../components/PopupWithConfirmation';
+import AvatarInfo from '../components/AvatarInfo';
 
 
 // create new card by class Card
@@ -58,6 +60,18 @@ const editPopup = new PopupWithForm('#edit-popup', (formValue) => {
 });
 editPopup.setEventListeners();
 
+// create popup with avatar editing 
+
+
+
+// create popup with confirmation of deleting card
+
+
+
+// create a function
+
+
+
  // set Listeners on buttons
 profileAddButton.addEventListener('click', () => {
     addPopup.open();
@@ -70,11 +84,38 @@ profileEditButton.addEventListener('click', () => {
 });
 
 
+
+
+
 // form & input validation 
 const profileFormValidator = new FormValidator(settings, profileForm);
 const cardFormValidator = new FormValidator(settings, cardForm);
 profileFormValidator.enableValidation();
 cardFormValidator.enableValidation();
+
+
+//////
+
+
+const avatarButton = document.querySelector('.profile__avatar-edit-button');
+const avatarPopup = document.getElementById("avatar-popup");
+const popupCloseButton = document.querySelector(".popup__close-button");
+
+const binPopup = document.getElementById("bin-popup");
+const binButton = document.querySelector('.element__bin');
+
+const handleOpenAvataPopup = (popup) => {
+    popup.classList.add("popup_opened");
+}
+
+const handleCloseAvatarPopup = (popup) => {
+    popup.classList.remove("popup_opened");
+}
+
+avatarButton.addEventListener('click', handleOpenAvataPopup(avatarPopup));
+popupCloseButton.addEventListener('click', handleCloseAvatarPopup(avatarPopup));
+
+//binButton.addEventListener('click', handleOpenAvataPopup(binPopup));
 
 
 

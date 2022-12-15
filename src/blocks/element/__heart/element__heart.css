@@ -10,6 +10,7 @@
     cursor: pointer;
     border: none;
     transition: opacity 1s linear 0s;
+    margin-bottom: 3px;
 }
 
 .element__heart:hover {
