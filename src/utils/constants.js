@@ -14,9 +14,11 @@ export const profileForm = document.getElementById("popup-form");
 export const profileFormName = profileForm.name;
 export const profileFormInfo = profileForm.info;
 
+export const avatarImage = document.querySelector(".profile__avatar");
+
 export const profileAddButton = document.querySelector(".profile__add-button");
 export const profileEditButton = document.querySelector(".profile__edit-button");
 export const cardBinButton = document.getElementById("element__bin");
-
+export const avatarEditButton = document.querySelector(".profile__add-button");
 
 
