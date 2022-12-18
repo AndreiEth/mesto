@@ -10,15 +10,15 @@ export default class FormValidator {
   enableValidation() {
     this._setEventListeners();
   }
-  
+
 
   _setEventListeners() {
     this._inputList.forEach((inputElement) => {
-    inputElement.addEventListener('input', () => this._onInput(inputElement));
-  });
+      inputElement.addEventListener('input', () => this._onInput(inputElement));
+    });
 
-  this._form.addEventListener('submit', () => this._onSubmit());
-  
+    this._form.addEventListener('submit', () => this._onSubmit());
+
 
   }
 
@@ -28,20 +28,20 @@ export default class FormValidator {
   }
 
   _onInput(inputElement) {
-    this._checkInputValidity (inputElement);
+    this._checkInputValidity(inputElement);
     this._checkFormValidity();
   }
 
-  
+
   _resetValidation() {
-    this._setSubmitButtonState(); 
+    this._setSubmitButtonState();
 
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
     });
 
   }
-  
+
   _checkFormValidity() {
     if (this._form.checkValidity()) {
       this._setSubmitButtonState(true);
@@ -50,8 +50,8 @@ export default class FormValidator {
     }
   }
 
-  _setSubmitButtonState (isActive) {
-    
+  _setSubmitButtonState(isActive) {
+
     if (isActive) {
       this._saveButton.removeAttribute("disabled");
       this._saveButton.classList.remove(this._settings.inactiveButtonClass);
@@ -59,9 +59,9 @@ export default class FormValidator {
       this._saveButton.setAttribute("disabled", true);
       this._saveButton.classList.add(this._settings.inactiveButtonClass);
     }
-   }
+  }
 
-   _checkInputValidity (inputElement) {
+  _checkInputValidity(inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(inputElement, inputElement.validationMessage);
     } else {
@@ -73,14 +73,14 @@ export default class FormValidator {
     inputElement.classList.add(this._settings.inputErrorClass);
     errorElement.textContent = errorMessage;
   };
-  
+
   _hideInputError = (inputElement) => {
     const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.remove(this._settings.inputErrorClass);
     errorElement.textContent = '';
   };
-  
-  }
+
+}
 
 
 

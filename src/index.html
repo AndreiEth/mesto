@@ -16,12 +16,12 @@
         <main>
             <section class="profile">
                 <div class="profile__avatar-container">
-                    <img class="profile__avatar" src="<%=require('./images/image.png')%>" alt="Аватар">
+                    <img class="profile__avatar" src="" alt="Аватар">
                     <button type="button" class="profile__avatar-edit-button"></button>
                 </div>
                 <div class="profile__info">
-                    <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-                    <p class="profile__user-about">Исследователь океана</p>
+                    <h1 class="profile__user-name"></h1>
+                    <p class="profile__user-about"></p>
                     <button class="profile__edit-button" type="button"></button>
                 </div>
                 <button class="profile__add-button" type="button"></button>
@@ -44,9 +44,10 @@
                         id="form-name" name="name" type="text" placeholder="Имя">
                     <span class="popup__error" id="form-name-error"></span>
                     <input required minlength="2" maxlength="200" class="popup__popup-form popup__popup-form_text_job"
-                        id="form-job" name="info" type="text" placeholder="О себе">
+                        id="form-job" name="about" type="text" placeholder="О себе">
                     <span class="popup__error" id="form-job-error"></span>
                     <button class="popup__save-button" type="submit">Сохранить</button>
+                    <div class="popup__submit-error"></div>
                 </form>
             </div>
         </div>
@@ -65,6 +66,7 @@
                 <span class="popup__error" id="form-image-error"></span>
                 <button class="popup__save-button popup__save-button_invalid" id="save-card-button"
                     type="submit">Создать</button>
+                <div class="popup__submit-error"></div>
             </form>
         </div>
     </div>
@@ -94,6 +96,7 @@
                     type="url" placeholder="Ссылка на картинку" value="">
                 <span class="popup__error" id="form-avatar-error"></span>
                 <button class="popup__save-button" id="avatar-card-button" type="submit">Сохранить</button>
+                <div class="popup__submit-error"></div>
                 <form>
         </div>
     </div>

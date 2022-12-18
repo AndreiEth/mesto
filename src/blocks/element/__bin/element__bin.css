@@ -12,6 +12,11 @@
     transition: opacity 1s linear 0s;
     right: 20px;
     top: 20px;
+    visibility: hidden;
+}
+
+.element__bin_visible {
+    visibility: visible;
 }
 
 .element__bin:hover {
