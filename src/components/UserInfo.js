@@ -21,12 +21,18 @@ export default class UserInfo {
         return this._id;
     }
 
-    setUserInfo(value) {
-        this._userName.textContent = value.name;
-        this._userAbout.textContent = value.about;
+    setUserInfo(userInfo) {
+        if (userInfo.name){
+            this._userName.textContent = userInfo.name;
+        };
+        if (userInfo.about) {
+            this._userAbout.textContent = userInfo.about;
+        };
     }
 
     setAvatar(src) {
+        if (src) {
         this._avatar.src = src;
+        };
     }
 }

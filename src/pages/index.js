@@ -6,7 +6,6 @@ import PopupWithForm from '../components/PopupWithForm.js';
 import UserInfo from '../components/UserInfo.js';
 import FormValidator from '../components/FormValidator.js';
 import PopupWithConfirmation from '../components/PopupWithConfirmation';
-import AvatarInfo from '../components/AvatarInfo';
 import { api } from '../api/api';
 import CardList from '../components/CardList';
 
@@ -42,10 +41,6 @@ const userInfo = new UserInfo({
     avatar: '.profile__avatar',
 });
 
-// create avatatInfo by class
-
-const avatarInfo = new AvatarInfo(avatarImage);
-
 // create new popup with zoomed picture
 
 const imageWithPopup = new PopupWithImage(settings.imagePopup);
@@ -58,7 +53,7 @@ const handleCardClick = (cardData) => imageWithPopup.open(cardData.link, cardDat
 
 // click on bin creating popup with confiramtion 
 
-const handleRemove = (cardData) => removeConfirmPopup.open(cardData);
+const handleRemove = (cardData) => popupWithConfirmation.open(cardData);
 
 // click on like 
 
@@ -68,7 +63,11 @@ const handleLike = ({ cardData, isLiked }) => {
     request.then((json) => {
         const card = cardList.getCardById(json._id);
         card.updateData(json);
-    });
+    })
+    request.catch((res) => {
+        handleLike.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
+    })
+    
 };
 
 // add several cards by Section class
@@ -87,49 +86,49 @@ Promise.all([api.getMe(), api.getCards()])
                 return createCard(cardData, handleCardClick).getCurrentCard();
             }
         }, '.elements');
-        section.renderer();
+        section.renderItems();
     });
 
 // create popup with adding card
 
-const addPopup = new PopupWithForm('#add-popup', (formValue) => {
-    addPopup.setLoading(true);
-    addPopup.setError(``);
+const popupAddCard = new PopupWithForm('#add-popup', (formValue) => {
+    popupAddCard.setLoading(true);
+    popupAddCard.setError(``);
 
     api.createCard(formValue)
         .then((json) => {
             const card = createCard(json, handleCardClick);
             section.addItem(card.getCurrentCard(), true);
-            addPopup.close();
+            popupAddCard.close();
         })
         .catch((res) => {
-            addPopup.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
+            popupAddCard.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
         })
         .finally(() => {
-            addPopup.setLoading(false);
+            popupAddCard.setLoading(false);
         });
 });
-addPopup.setEventListeners();
+popupAddCard.setEventListeners();
 
 // create popup with editing profile info
 
-const editPopup = new PopupWithForm('#edit-popup', (formValue) => {
-    editPopup.setLoading(true);
-    editPopup.setError(``);
+const popupEditProfile = new PopupWithForm('#edit-popup', (formValue) => {
+    popupEditProfile.setLoading(true);
+    popupEditProfile.setError(``);
 
     api.setMe(formValue)
         .then((json) => {
             userInfo.setUserInfo({ about: json.about, name: json.name });
-            editPopup.close();
+            popupEditProfile.close();
         })
         .catch((res) => {
-            editPopup.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
+            popupEditProfile.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
         })
         .finally(() => {
-            editPopup.setLoading(false);
+            popupEditProfile.setLoading(false);
         })
 });
-editPopup.setEventListeners();
+popupEditProfile.setEventListeners();
 
 // create popup with avatar editing 
 
@@ -153,26 +152,29 @@ avatarPopup.setEventListeners();
 
 // create popup with confirmation of deleting card
 
-const removeConfirmPopup = new PopupWithConfirmation('#bin-popup', (cardData) => {
+const popupWithConfirmation = new PopupWithConfirmation('#bin-popup', (cardData) => {
     api.removeCard(cardData._id)
         .then(() => {
             cardList.removeCardById(cardData._id);
-            removeConfirmPopup.close();
-        });
+            popupWithConfirmation.close();
+        })
+        .catch((res) => {
+            popupWithConfirmation.setError(`Произошла ошибка запроса: HTTP ${res.status}.`);
+        })
 });
-removeConfirmPopup.setEventListeners();
+popupWithConfirmation.setEventListeners();
 
 
 // set Listeners on buttons
 
 profileAddButton.addEventListener('click', () => {
-    addPopup.open();
+    popupAddCard.open();
 });
 profileEditButton.addEventListener('click', () => {
     const currentUserInfo = userInfo.getUserInfo();
     profileFormName.value = currentUserInfo.name;
     profileFormAbout.value = currentUserInfo.about;
-    editPopup.open();
+    popupEditProfile.open();
 });
 
 avatarEditButton.addEventListener('click', () => {
