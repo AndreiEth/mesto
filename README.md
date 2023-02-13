@@ -11,3 +11,42 @@ I have implemented a pop-up window in this project, with some inputs, close and 
 Also I added card button which creating a new element with two inputs such as name of the place and link to the image
 This card can be deleted clicking bin button and liked.
 By clicking on the image merging a pop-up with scaled picture.
+
+
+# Project: Mesto Russia (Travelling through Russia)
+
+## About the project
+An interactive web page that allows you to easily recognize a profile and avatar, add a new card with a photo and description of a place, delete your cards, put and delete on your cards and cards of other users. All blocking changes on the Yandex.Practice server.
+
+## Technology stack and functionality:
+### HTML
+* Semantic tags
+### CSS
+* Flexbox
+* Grid Layout
+* Responsive layout using media queries
+* Positioning blocks and elements
+* Minification of CSS and automatic addition of vendor prefixes
+* BEM Nested
+* CSS pseudo-classes
+### JavaScript
+* Modular windows with shape
+* Live form validation
+* ES6 classes
+* OOP
+* Asynchronous Code: Promises and HTTP Requests
+* Minification and transpilation of JS Babel
+* Yandex.Practice Server API
+* webpack
+
+## Instructions for working with the project:
+```
+git clone git@github.com:AndreiEth/mesto.git
+cd mesto
+npm i webpack --save-dev
+npm run build
+npm run dev
+```
+## Deploy project to Github Pages
+```
+npm run deploy
